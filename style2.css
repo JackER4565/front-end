@@ -1,0 +1,11 @@
+.nomelaConteiner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 20px;
+
+     &.nomelaConteiner__button {
+        border: 2px solid red;
+    }
+}

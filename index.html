@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
+</head>
+
+<body translate="no">
+    <nav class="NavBar">
+        <button class="boton activo" id="btn-inicio">
+            Inicio
+        </button>
+        <button class="boton" id="btn-datos">
+            Datos personales
+        </button>
+        <button class="boton" id="btn-experiencia">
+            Experiencia laboral
+        </button>
+        <button class="boton" id="btn-educacion">
+            Educación
+        </button>
+        <button class="boton" id="btn-contacto">
+            Contacto
+        </button>
+    </nav>
+
+    <main id="intro">
+        <div id="secciones" class="secciones">
+        <section id="inicio">
+            <div class="content">
+                <h2 class="nombre">Rafael Warren</h2>
+                <div class="logo">
+                    <img class="yo" src="69.webp" alt="logo" />
+                </div>
+                <h2 class="curriculum">Curriculum Vitae</h2>
+            </div>
+
+        </section>
+        <section id="datos">
+            <div class="sectiondiv">
+                <ul>
+                    <li><b>Nombre:</b> Rafael Warren</li>
+                    <li><b>Estado civil:</b> Soltero</li>
+                    <li><b>Hijos:</b> No</li>
+                    <li><b>Fecha de nacimiento:</b> 06/06/1964</li>
+                    <li>
+                        <b>Mi dirección es:</b>
+                        <a
+                            href="https://www.google.com/maps/place/Bartolom%C3%A9+Mitre+3410,+C1201AAN+CABA/@-34.609085,-58.4170939,17z/data=!3m1!4b1!4m6!3m5!1s0x95bccaf50463b04b:0xa9885f6aa16393d!8m2!3d-34.6090894!4d-58.4149052!16s%2Fg%2F11cs6y_hkh?hl=es">Bartolomé
+                            Mitre 3410, tercer piso</a><b></b>
+                    </li>
+                    <li><b>Dispongo de movilidad propia</b></li>
+                </ul>
+            </div>
+        </section>
+        <section id="experiencia">
+            <div class="sectiondiv">
+                <ul>
+                    <li><b>Nombre:</b> Compañía</li>
+                    <li><b>Posición:</b> Presidente</li>
+                    <li>
+                        <b>Url:</b> <a href="https://company.com">https://company.com</a>
+                    </li>
+                    <li><b>Fecha de inicio:</b> 01/01/2013</li>
+                    <li><b>Fecha de finalización:</b> -Actualmente trabajo aquí-</li>
+                </ul>
+                <hr>
+                <ul>
+                    <li><b>Nombre: </b>Otra Compañía</li>
+                    <li><b>Posición: </b>Operario</li>
+                    <li><b>Fecha de inicio: </b> 01/01/2010</li>
+                    <li><b>Fecha de finalización: </b> 01/01/2013</li>
+            </div>
+        </section>
+        <section id="Educacion">
+            <div class="sectiondiv">
+                <ul>
+                    <li><b>Institución:</b> Universidad</li>
+                    <li>
+                        <b>URL:</b>
+                        <a href="https://institution.com/">https://institution.com/</a>
+                    </li>
+                    <li><b>Area de estudio:</b> Desarrollador de Software</li>
+                    <li><b>Fecha de inicio:</b> 2011-01-01</li>
+                    <li><b>Fecha de terminación:</b> 2013-01-01</li>
+                    <li><b>Titulo:</b> Bachiller</li>
+                </ul>
+                <hr>
+                <ul>
+                    <li><b>Institución: </b> Pagina.com </li>
+                    <li><b>URL: </b> <a href="http://pagina.com">pagina.com</a></li>
+                    <li><b>Curso:</b> React de 0 a 100</li>
+                    <li><b>Estado: </b> Finalizado</li>
+                    <li><b>Certificado: </b> -Certificado- </li>
+                </ul>
+            </div>
+        </section>
+        <section id="contacto">
+            <div class="sectiondiv">
+                <ul>
+                    <li>
+                        <b>Mi telefono es:</b> <a href="tel:+34678567876">+34678567876</a>
+                    </li>
+                    <li>
+                        <b>Mi correo laboral es:</b>
+                        <a href="mailto:rafael.warren@work.com">rafael.warren@trabajo.com</a>
+                    </li>
+                    <li>
+                        <b>Mi correo personal es:</b>
+                        <a href="mailto:rafael.warren@personal.com">rafael.warren@personal.com</a>
+                    </li>
+                    <li>
+                        <b>Linkedin:</b>
+                        <a href="http://linkedin.com">Rafael Warren</a>
+                    </li>
+                    <li>
+                        <b>GitHub:</b>
+                        <a href="http://GitHub.com">RWarren</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        </div> <!-- fin del secciones-->
+        <div class="flechaScroll">
+            <div class="caja">
+            <i onclick="inext('-')" id="FlechaLeft" class="fa fa-arrow-left fa-4x disabledButton" aria-hidden="true"></i>
+            <i onclick="inext('+')" id="FlechaRight" class="fa fa-arrow-right fa-4x" aria-hidden="true"></i>
+            </div></div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
