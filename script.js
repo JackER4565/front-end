@@ -20,48 +20,48 @@ function botonactivo(elemento, flecha1, flecha2) {
 	btn_educacion.classList.remove("activo");
 	btn_contacto.classList.remove("activo");
 	elemento.classList.add("activo");
-    FlechaRight.classList.remove("disabledButton");
-    FlechaLeft.classList.remove("disabledButton");
+	FlechaRight.classList.remove("disabledButton");
+	FlechaLeft.classList.remove("disabledButton");
 	if (flecha1) FlechaLeft.classList.add("disabledButton");
-    if (flecha2) FlechaRight.classList.add("disabledButton");
+	if (flecha2) FlechaRight.classList.add("disabledButton");
 }
 
 //scrollea y selecciona el boton activo
 function seccionactiva(scroll, variable = "wheel") {
-    ventanawidth = window.innerWidth;
-    let resultado = scroll / ventanawidth;
-    switch (true) {
-        case resultado < 0.5:
-            if (variable == "wheel" || variable == "boton")
-                scrollContainer.scrollLeft = scroll;
-            botonactivo(btn_inicio, true, false);
-            auxiliar_scroll = ventanawidth * 0;
-            break;
-        case resultado >= 0.5 && resultado < 1.5:
-            if (variable == "wheel" || variable == "boton")
-                scrollContainer.scrollLeft = scroll;
-            botonactivo(btn_datos, false, false);
-            auxiliar_scroll = ventanawidth * 1;
-            break;
-        case resultado >= 1.5 && resultado < 2.5:
-            if (variable == "wheel" || variable == "boton")
-                scrollContainer.scrollLeft = scroll;
-            botonactivo(btn_experiencia, false, false);
-            auxiliar_scroll = ventanawidth * 2;
-            break;
-        case resultado >= 2.5 && resultado < 3.5:
-            if (variable == "wheel" || variable == "boton")
-                scrollContainer.scrollLeft = scroll;
-            botonactivo(btn_educacion, false, false);
-            auxiliar_scroll = ventanawidth * 3;
-            break;
-        case resultado >= 3.5:
-            if (variable == "wheel" || variable == "boton")
-                scrollContainer.scrollLeft = scroll;
-            botonactivo(btn_contacto, false, true);
-            auxiliar_scroll = ventanawidth * 4;
-            break;
-    }
+	ventanawidth = window.innerWidth;
+	let resultado = scroll / ventanawidth;
+	switch (true) {
+		case resultado < 0.5:
+			if (variable == "wheel" || variable == "boton")
+				scrollContainer.scrollLeft = scroll;
+			botonactivo(btn_inicio, true, false);
+			auxiliar_scroll = ventanawidth * 0;
+			break;
+		case resultado >= 0.5 && resultado < 1.5:
+			if (variable == "wheel" || variable == "boton")
+				scrollContainer.scrollLeft = scroll;
+			botonactivo(btn_datos, false, false);
+			auxiliar_scroll = ventanawidth * 1;
+			break;
+		case resultado >= 1.5 && resultado < 2.5:
+			if (variable == "wheel" || variable == "boton")
+				scrollContainer.scrollLeft = scroll;
+			botonactivo(btn_experiencia, false, false);
+			auxiliar_scroll = ventanawidth * 2;
+			break;
+		case resultado >= 2.5 && resultado < 3.5:
+			if (variable == "wheel" || variable == "boton")
+				scrollContainer.scrollLeft = scroll;
+			botonactivo(btn_educacion, false, false);
+			auxiliar_scroll = ventanawidth * 3;
+			break;
+		case resultado >= 3.5:
+			if (variable == "wheel" || variable == "boton")
+				scrollContainer.scrollLeft = scroll;
+			botonactivo(btn_contacto, false, true);
+			auxiliar_scroll = ventanawidth * 4;
+			break;
+	}
 }
 //funcion para las flechas
 function inext(tipo) {
@@ -85,21 +85,18 @@ scrollContainer.addEventListener("scroll", (evt) => {
 
 // event listener para la rueda
 scrollContainer.addEventListener("wheel", (evt) => {
-	var isTrackpad = false;
-	if (evt.wheelDeltaY) {
-	  if (evt.wheelDeltaY === (evt.deltaY * -3)) {
-		isTrackpad = true;
-	  }
-	}
-	else if (evt.deltaMode === 0) {
-	  isTrackpad = true;
+	evt.preventDefault();
+	let deltay = evt.deltaY;
+	if (evt.deltaMode === 0) {
+		return;
 	}
 	console.log(isTrackpad ? "Trackpad detected" : "Mousewheel detected");
-	evt.preventDefault();
+
 	ventanawidth = window.innerWidth;
 
 	window.requestAnimationFrame(() => {
-		if (evt.deltaY > 0) {
+		console.log("deltay", deltay);
+		if (deltay > 0) {
 			auxiliar_scroll += ventanawidth;
 			seccionactiva(auxiliar_scroll);
 		} else {
@@ -108,7 +105,6 @@ scrollContainer.addEventListener("wheel", (evt) => {
 		}
 	});
 });
-
 
 // event listener para los botones del navbar
 document.querySelector(".NavBar").addEventListener("click", (e) => {
