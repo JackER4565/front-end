@@ -281,3 +281,27 @@ hr {
 		display: none;
 	}
 }
+
+@media only screen and (min-width: 1200px) {
+	.NavBar {
+		margin-top: 10px;
+	}
+
+	.nombre {
+		margin-top: 20px;
+		margin-bottom: 0;
+	}
+
+	.logo {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	.curriculum {
+		margin: 0;
+	}
+
+	.sectiondiv {
+		font-size: 1.3em;
+	}
+}
