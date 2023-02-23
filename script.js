@@ -85,6 +85,16 @@ scrollContainer.addEventListener("scroll", (evt) => {
 
 // event listener para la rueda
 scrollContainer.addEventListener("wheel", (evt) => {
+	var isTrackpad = false;
+	if (evt.wheelDeltaY) {
+	  if (evt.wheelDeltaY === (evt.deltaY * -3)) {
+		isTrackpad = true;
+	  }
+	}
+	else if (evt.deltaMode === 0) {
+	  isTrackpad = true;
+	}
+	console.log(isTrackpad ? "Trackpad detected" : "Mousewheel detected");
 	evt.preventDefault();
 	ventanawidth = window.innerWidth;
 
