@@ -87,15 +87,14 @@ scrollContainer.addEventListener("scroll", (evt) => {
 scrollContainer.addEventListener("wheel", (evt) => {
 	evt.preventDefault();
 	let deltay = evt.deltaY;
-	if (evt.deltaMode === 0) {
+	if (deltay != 100) {
+		if (deltay != -100){
 		return;
-	}
-	console.log(isTrackpad ? "Trackpad detected" : "Mousewheel detected");
+	}}
 
 	ventanawidth = window.innerWidth;
 
 	window.requestAnimationFrame(() => {
-		console.log("deltay", deltay);
 		if (deltay > 0) {
 			auxiliar_scroll += ventanawidth;
 			seccionactiva(auxiliar_scroll);
@@ -113,7 +112,6 @@ document.querySelector(".NavBar").addEventListener("click", (e) => {
 	if (target && target.tagName == "BUTTON") {
 		target.parentNode.childNodes.forEach((f) => {
 			if (f == target) {
-				console.log(window.innerWidth * multiplicador);
 				seccionactiva(window.innerWidth * multiplicador, "boton");
 			}
 			if (f.tagName == "BUTTON") multiplicador += 1;
